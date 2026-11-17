@@ -1,0 +1,196 @@
+@use "sass:map";
+
+$primary: #b9f575;
+$body-color: #e8efeb;
+$body-bg: #101714;
+$link-color: $primary;
+$border-radius: 0.65rem;
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+// Bootstrap 5.3 uses shared Sass variables across its partials.
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$utilities: (
+  "display": map.get($utilities, "display"),
+  "margin-bottom": map.get($utilities, "margin-bottom"),
+);
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/utilities/api";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+$surface: #18221d;
+$line: #34443b;
+$muted: #b2c0b7;
+$mono: "IBM Plex Mono", Consolas, monospace;
+
+html {
+  color-scheme: dark;
+}
+
+.site-header {
+  border-bottom: 1px solid $line;
+}
+
+.site-header .container,
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.15rem;
+}
+
+.wordmark {
+  color: $body-color;
+  font-family: $mono;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.wordmark .bi {
+  margin-right: 0.45rem;
+  color: $primary;
+}
+
+.school,
+.site-footer {
+  color: $muted;
+  font-size: 0.875rem;
+}
+
+.hero {
+  padding-block: clamp(3.5rem, 9vw, 7rem);
+  background: radial-gradient(ellipse at 75% 30%, #233728, transparent 60%);
+  border-bottom: 1px solid $line;
+}
+
+.hero .row {
+  align-items: center;
+}
+
+.hero h1 {
+  margin-block: 0.65rem 1.25rem;
+  font-size: clamp(2.55rem, 5vw, 5.15rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1.02;
+}
+
+.hero h1 span {
+  display: block;
+  color: $primary;
+}
+
+.section-label {
+  color: $primary;
+  font: 0.8rem $mono;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.intro {
+  max-width: 39ch;
+  color: $muted;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.actions .btn {
+  padding: 0.7rem 1rem;
+  font-weight: 650;
+}
+
+.actions .bi {
+  margin-right: 0.35rem;
+}
+
+.terminal {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid $line;
+  border-radius: 0.9rem;
+  background: #111b15;
+  box-shadow: 0 16px 40px #080c0a66;
+}
+
+.terminal figcaption {
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid $line;
+  background: $surface;
+  color: $muted;
+  font: 0.875rem $mono;
+}
+
+.terminal pre {
+  margin: 0;
+  padding: 1.2rem;
+  color: $body-color;
+  font: clamp(0.8rem, 2.2vw, 0.95rem)/1.95 $mono;
+}
+
+.prompt {
+  color: $primary;
+}
+
+.stack {
+  padding-block: 3rem 4rem;
+  scroll-margin-top: 1rem;
+}
+
+.stack h2 {
+  margin-bottom: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -0.035em;
+}
+
+.tool-card {
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid $line;
+  border-radius: $border-radius;
+  background: $surface;
+}
+
+.tool-card .bi {
+  display: inline-grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  place-items: center;
+  margin-bottom: 0.8rem;
+  border-radius: 0.55rem;
+  background: #293d2d;
+  color: $primary;
+}
+
+.tool-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.tool-card p {
+  margin-bottom: 0;
+  color: $muted;
+  line-height: 1.5;
+}
+
+.site-footer {
+  border-top: 1px solid $line;
+}

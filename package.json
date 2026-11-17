@@ -1,0 +1,27 @@
+{
+  "name": "bootstrap-sass-project",
+  "version": "1.0.0",
+  "description": "Frontend-Übung mit Sass, Bootstrap, Bootstrap Icons und BrowserSync",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "icons:copy": "node -e \"require('node:fs').cpSync('node_modules/bootstrap-icons/font/fonts', 'dist/css/fonts', { recursive: true })\"",
+    "scss:build": "npm run icons:copy && sass --load-path=node_modules --quiet-deps --style=compressed --no-source-map src/scss/style.scss dist/css/style.css",
+    "scss:watch": "npm run icons:copy && sass --load-path=node_modules --quiet-deps --watch src/scss/style.scss:dist/css/style.css",
+    "serve": "browser-sync start --server --files \"*.html,dist/css/*.css\" --listen 127.0.0.1 --no-open --no-ui --no-notify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "sass": "^1.93.2"
+  }
+}

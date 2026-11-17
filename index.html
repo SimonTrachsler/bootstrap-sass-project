@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ein lokales Frontend-Setup mit npm, Sass, Bootstrap und BrowserSync.">
+  <title>Frontend Toolchain | HTL Krems</title>
+  <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+  <header class="site-header" id="start">
+    <div class="container">
+      <a class="wordmark" href="#start"><i class="bi bi-code-slash" aria-hidden="true"></i>Frontend Toolchain</a>
+      <span class="school">HTL Krems</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="row gy-4 gx-lg-5">
+          <div class="col-md-6">
+            <span class="section-label">Webentwicklung · Übung 05</span>
+            <h1 id="hero-heading">Frontend-Setup <span>mit Live-Reload.</span></h1>
+            <p class="intro mb-0">Sass kompiliert die ausgewählten Bootstrap-Module. BrowserSync zeigt HTML- und CSS-Änderungen direkt im Browser.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#befehle"><i class="bi bi-terminal" aria-hidden="true"></i>Befehle ansehen</a>
+              <a class="btn btn-outline-primary" href="#werkzeuge"><i class="bi bi-grid" aria-hidden="true"></i>Werkzeuge</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <figure class="terminal" id="befehle">
+              <figcaption>Projekt lokal starten</figcaption>
+              <pre><code><span class="prompt">$</span> npm install
+<span class="prompt">$</span> npm run scss:build
+<span class="prompt">$</span> npm run serve</code></pre>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack container" id="werkzeuge" aria-labelledby="stack-heading">
+      <h2 id="stack-heading">Werkzeuge im Projekt</h2>
+      <div class="row g-3">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="tool-card">
+            <i class="bi bi-box-seam" aria-hidden="true"></i>
+            <h3>npm</h3>
+            <p>Installiert die Pakete und startet Build, Watcher und Server.</p>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="tool-card">
+            <i class="bi bi-braces" aria-hidden="true"></i>
+            <h3>Sass</h3>
+            <p>Kompiliert Designvariablen und SCSS-Module zu einer CSS-Datei.</p>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="tool-card">
+            <i class="bi bi-bootstrap" aria-hidden="true"></i>
+            <h3>Bootstrap</h3>
+            <p>Liefert das responsive Grid und die Button-Stile. Bootstrap Icons ergänzt die Symbole.</p>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="tool-card">
+            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            <h3>BrowserSync</h3>
+            <p>Lädt HTML-Änderungen neu und aktualisiert das Stylesheet im Browser.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>Webentwicklung · HTL Krems</span>
+      <a href="#start">Zurück nach oben <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
