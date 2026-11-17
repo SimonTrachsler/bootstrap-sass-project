@@ -8,8 +8,8 @@
   },
   "scripts": {
     "icons:copy": "node -e \"require('node:fs').cpSync('node_modules/bootstrap-icons/font/fonts', 'dist/css/fonts', { recursive: true })\"",
-    "scss:build": "npm run icons:copy && sass --load-path=node_modules --quiet-deps --style=compressed --no-source-map src/scss/style.scss dist/css/style.css",
-    "scss:watch": "npm run icons:copy && sass --load-path=node_modules --quiet-deps --watch src/scss/style.scss:dist/css/style.css",
+    "scss:build": "npm run icons:copy && sass --load-path=node_modules --quiet-deps --silence-deprecation=import --style=compressed --no-source-map src/scss/style.scss dist/css/style.css",
+    "scss:watch": "npm run icons:copy && sass --load-path=node_modules --quiet-deps --silence-deprecation=import --watch src/scss/style.scss:dist/css/style.css",
     "serve": "browser-sync start --server --files \"*.html,dist/css/*.css\" --listen 127.0.0.1 --no-open --no-ui --no-notify"
   },
   "keywords": [],

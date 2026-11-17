@@ -9,10 +9,10 @@
 
 ## Installation
 
-1. Kopiere auf GitHub die HTTPS-Adresse des Repositories unter **Code**. Ersetze im folgenden Befehl `BENUTZERNAME` und bei Bedarf den Repository-Namen durch die dort angezeigten Werte.
+1. Klone das Repository und wechsle in den Projektordner.
 
    ```sh
-   git clone https://github.com/BENUTZERNAME/bootstrap-sass-project.git
+   git clone https://github.com/SimonTrachsler/bootstrap-sass-project.git
    cd bootstrap-sass-project
    ```
 
@@ -24,6 +24,8 @@
    npm install
    npm run scss:build
    ```
+
+   Falls PowerShell das Skript `npm.ps1` blockiert, verwende `npm.cmd` anstelle von `npm`.
 
 ## Entwicklung mit Live-Reload
 

@@ -16,7 +16,6 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", sans-serif;
 @import "bootstrap/scss/utilities";
 
 $utilities: (
-  "display": map.get($utilities, "display"),
   "margin-bottom": map.get($utilities, "margin-bottom"),
 );
 
@@ -81,7 +80,7 @@ html {
 
 .hero h1 {
   margin-block: 0.65rem 1.25rem;
-  font-size: clamp(2.55rem, 5vw, 5.15rem);
+  font-size: clamp(2.15rem, 5vw, 5.15rem);
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 1.02;
