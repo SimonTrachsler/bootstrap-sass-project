@@ -1,0 +1,109 @@
+name: Projekt importieren und prüfen
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Lokale Projekt-Commits übernehmen
+        env:
+          PROJECT_BUNDLE: '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'
+        run: |
+          printf '%s' "$PROJECT_BUNDLE" | base64 --decode > "$RUNNER_TEMP/project.bundle"
+          git bundle verify "$RUNNER_TEMP/project.bundle"
+          git fetch "$RUNNER_TEMP/project.bundle" refs/heads/main:refs/heads/submission
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git merge --allow-unrelated-histories --no-edit submission
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: npm-Abhängigkeiten installieren
+        run: npm install --no-audit --no-fund
+      - name: Sass-Build prüfen
+        run: |
+          npm run scss:build
+          test -s dist/css/style.css
+          test -s dist/css/fonts/bootstrap-icons.woff2
+      - name: Grid, Icons und Live-Reload in Chrome prüfen
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-check" --no-save --no-audit --no-fund playwright@1.58.2
+          export PLAYWRIGHT_MODULE="$RUNNER_TEMP/browser-check/node_modules/playwright"
+          npm run scss:watch > "$RUNNER_TEMP/sass.log" 2>&1 &
+          sass_pid=$!
+          npm run serve > "$RUNNER_TEMP/browser-sync.log" 2>&1 &
+          server_pid=$!
+          trap 'cat "$RUNNER_TEMP/sass.log" "$RUNNER_TEMP/browser-sync.log"; kill "$sass_pid" "$server_pid" 2>/dev/null || true' EXIT
+          curl --retry 10 --retry-connrefused --retry-delay 1 --silent --fail http://127.0.0.1:3000/ -o /dev/null
+          timeout 15 bash -c 'until grep -q "Sass is watching for changes" "$RUNNER_TEMP/sass.log"; do sleep 0.2; done'
+          node <<'JS'
+          const assert = require('node:assert/strict');
+          const {readFile, writeFile} = require('node:fs/promises');
+          const {chromium} = require(process.env.PLAYWRIGHT_MODULE);
+
+          async function verify() {
+            const htmlPath = 'index.html';
+            const sassPath = 'src/scss/style.scss';
+            const html = await readFile(htmlPath, 'utf8');
+            const sass = await readFile(sassPath, 'utf8');
+            const browser = await chromium.launch({channel: 'chrome'});
+            try {
+              const page = await browser.newPage({viewport: {width: 1200, height: 900}});
+              page.setDefaultTimeout(15000);
+              const connection = page.waitForEvent('websocket', {
+                predicate: socket => socket.url().includes('/browser-sync/'),
+              });
+              const response = await page.goto('http://127.0.0.1:3000/');
+              assert.equal(response.status(), 200);
+              await connection;
+              assert(await page.evaluate(async () => {
+                await document.fonts.ready;
+                return [...document.fonts].some(font => font.family === 'bootstrap-icons' && font.status === 'loaded');
+              }), 'Bootstrap Icons font did not load');
+
+              const columns = page.locator('.hero .col-md-6');
+              const positions = () => Promise.all([columns.nth(0).boundingBox(), columns.nth(1).boundingBox()]);
+              const [left, right] = await positions();
+              assert(right.x > left.x, 'Desktop columns must sit side by side');
+              await page.setViewportSize({width: 320, height: 780});
+              const [top, bottom] = await positions();
+              assert(Math.abs(top.x - bottom.x) < 1 && bottom.y > top.y, 'Mobile columns must stack');
+              assert(await page.evaluate(() => document.documentElement.scrollWidth === innerWidth), 'Mobile page overflows');
+              await page.getByRole('link', {name: 'Werkzeuge'}).click();
+              assert.equal(new URL(page.url()).hash, '#werkzeuge');
+              console.log('Responsive layout, link and icon font verified.');
+
+              await writeFile(sassPath, sass + '\n.hero h1 span { color: rgb(1, 27, 43); }\n');
+              await page.waitForFunction(() => getComputedStyle(document.querySelector('.hero h1 span')).color === 'rgb(1, 27, 43)');
+              console.log('Sass watch and CSS injection verified.');
+
+              await writeFile(htmlPath, html.replace('</body>', '<p>Live-Reload-Test</p>\n</body>'));
+              await page.getByText('Live-Reload-Test', {exact: true}).waitFor();
+              console.log('HTML reload verified.');
+            } finally {
+              await browser.close();
+              await Promise.all([writeFile(htmlPath, html), writeFile(sassPath, sass)]);
+            }
+          }
+          verify().catch(error => { console.error(error); process.exitCode = 1; });
+          JS
+      - name: Lockdatei und geprüften Projektstand pushen
+        run: |
+          git diff --exit-code
+          git add -- package-lock.json
+          git commit -m 'Lock npm dependencies'
+          git push origin HEAD:refs/heads/main
+          git bundle create "$RUNNER_TEMP/published-project.bundle" refs/heads/main
+      - uses: actions/upload-artifact@v7
+        with:
+          path: ${{ runner.temp }}/published-project.bundle
+          archive: false
+          retention-days: 1
